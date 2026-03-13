@@ -1,0 +1,197 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "乡里乡亲",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/product/list",
+      "style": {
+        "navigationBarTitleText": "商品列表"
+      }
+    },
+    {
+      "path": "pages/product/detail",
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
+    },
+    {
+      "path": "pages/product/search",
+      "style": {
+        "navigationBarTitleText": "搜索商品"
+      }
+    },
+    {
+      "path": "pages/cart/index",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/order/confirm",
+      "style": {
+        "navigationBarTitleText": "确认订单"
+      }
+    },
+    {
+      "path": "pages/order/list",
+      "style": {
+        "navigationBarTitleText": "我的订单"
+      }
+    },
+    {
+      "path": "pages/order/detail",
+      "style": {
+        "navigationBarTitleText": "订单详情"
+      }
+    },
+    {
+      "path": "pages/order/review",
+      "style": {
+        "navigationBarTitleText": "订单评价"
+      }
+    },
+    {
+      "path": "pages/user/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/user/address-list",
+      "style": {
+        "navigationBarTitleText": "收货地址"
+      }
+    },
+    {
+      "path": "pages/user/address-edit",
+      "style": {
+        "navigationBarTitleText": "编辑地址"
+      }
+    },
+    {
+      "path": "pages/user/profile",
+      "style": {
+        "navigationBarTitleText": "个人信息"
+      }
+    },
+    {
+      "path": "pages/auth/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/carpool/index",
+      "style": {
+        "navigationBarTitleText": "乡村顺风车"
+      }
+    },
+    {
+      "path": "pages/carpool/publish",
+      "style": {
+        "navigationBarTitleText": "发布行程"
+      }
+    },
+    {
+      "path": "pages/carpool/detail",
+      "style": {
+        "navigationBarTitleText": "行程详情"
+      }
+    },
+    {
+      "path": "pages/carpool/my-trips",
+      "style": {
+        "navigationBarTitleText": "我的行程"
+      }
+    },
+    {
+      "path": "pages/alliance/index",
+      "style": {
+        "navigationBarTitleText": "百商联盟"
+      }
+    },
+    {
+      "path": "pages/alliance/coupons",
+      "style": {
+        "navigationBarTitleText": "优惠券中心"
+      }
+    },
+    {
+      "path": "pages/station/list",
+      "style": {
+        "navigationBarTitleText": "乡村服务站"
+      }
+    },
+    {
+      "path": "pages/station/detail",
+      "style": {
+        "navigationBarTitleText": "服务站详情"
+      }
+    },
+    {
+      "path": "pages/station/purchase",
+      "style": {
+        "navigationBarTitleText": "代购申请"
+      }
+    },
+    {
+      "path": "pages/station/orders",
+      "style": {
+        "navigationBarTitleText": "我的代购"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "乡里乡亲",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f5f5",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#4CAF50",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/product/list",
+        "text": "百货",
+        "iconPath": "static/tabbar/shop.png",
+        "selectedIconPath": "static/tabbar/shop-active.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "static/tabbar/cart.png",
+        "selectedIconPath": "static/tabbar/cart-active.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/user.png",
+        "selectedIconPath": "static/tabbar/user-active.png"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^Empty$": "@/components/common/Empty.vue",
+      "^ProductCard$": "@/components/common/ProductCard.vue",
+      "^SearchBar$": "@/components/common/SearchBar.vue"
+    }
+  }
+}

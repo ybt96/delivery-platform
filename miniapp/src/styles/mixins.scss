@@ -1,0 +1,172 @@
+// ==================== 混合器 ====================
+
+// 文本省略
+@mixin ellipsis($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $lines == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+}
+
+// flex 居中
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// flex 两端对齐
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// flex 纵向布局
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// 1px 边框
+@mixin border-bottom {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1rpx;
+    background-color: $border-color;
+    transform: scaleY(0.5);
+  }
+}
+
+// 安全区域底部
+@mixin safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// 卡片样式
+@mixin card {
+  background-color: $bg-white;
+  border-radius: $radius-base;
+  padding: $spacing-base;
+  margin: $spacing-sm $spacing-base;
+  box-shadow: $shadow-sm;
+}
+
+// 价格样式
+@mixin price($size: $font-size-lg) {
+  color: $price-color;
+  font-size: $size;
+  font-weight: bold;
+  &::before {
+    content: '¥';
+    font-size: $size * 0.75;
+    margin-right: 2rpx;
+  }
+}
+
+// 标签样式
+@mixin tag($bg: $primary-color, $color: #fff) {
+  display: inline-block;
+  padding: 4rpx 12rpx;
+  font-size: $font-size-xs;
+  color: $color;
+  background-color: $bg;
+  border-radius: $radius-sm;
+  line-height: 1.5;
+}
+
+// 按钮样式
+@mixin btn-primary {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: $radius-round;
+  font-size: $font-size-base;
+  padding: 20rpx 40rpx;
+  text-align: center;
+  &:active {
+    background-color: $primary-dark;
+  }
+}
+
+// 分组区块标题（灰底标签形式）
+@mixin section-label {
+  font-size: $section-title-size;
+  color: $section-title-color;
+  padding: 20rpx $spacing-base 12rpx;
+  background-color: $bg-color;
+  display: block;
+  letter-spacing: 1rpx;
+}
+
+// 标准列表 item（含底部分割线）
+@mixin list-item {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md $spacing-base;
+  background-color: #fff;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: $spacing-base;
+    bottom: 0;
+    right: 0;
+    height: 1rpx;
+    background-color: $divider-color;
+    transform: scaleY(0.5);
+  }
+  &:last-child::after {
+    display: none;
+  }
+  &:active {
+    background-color: $bg-gray;
+  }
+}
+
+// 骨架屏动画块
+@mixin skeleton-block {
+  background: linear-gradient(90deg, $skeleton-bg 25%, $skeleton-shine 50%, $skeleton-bg 75%);
+  background-size: 400% 100%;
+  -webkit-animation: skeleton-shimmer 1.4s ease infinite;
+          animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: $radius-sm;
+}
+
+@-webkit-keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// 徽标（角标）
+@mixin badge {
+  position: absolute;
+  top: -8rpx;
+  right: -12rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding: 0 8rpx;
+  border-radius: 16rpx;
+  background-color: $error-color;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+}

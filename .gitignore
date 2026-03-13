@@ -1,0 +1,46 @@
+# OS
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Env files / sensitive configs
+.env
+.env.*
+*.local
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local AI / tool metadata
+.trae/
+.copilotcode/
+.copilotcodemodes
+opc-product-design-export.yaml
+
+# Project-specific sensitive files
+backend/.env
+
+# Optional local-only sibling projects (exclude from first push unless explicitly needed)
+platform-server/
+vue-admin-template/

@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # MySQL 数据库
+  mysql:
+    image: mysql:8.0
+    container_name: delivery-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: xianglixtangqin
+      MYSQL_USER: delivery_user
+      MYSQL_PASSWORD: delivery_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Redis 缓存
+  redis:
+    image: redis:7-alpine
+    container_name: delivery-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+  # Express 后端（当前运行版本）
+  express-backend:
+    build: ./platform-server
+    container_name: delivery-express
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=delivery_user
+      - DB_PASSWORD=delivery_pass
+      - DB_NAME=xianglixtangqin
+    depends_on:
+      - mysql
+    restart: always
+
+  # NestJS 后端（新架构）
+  nestjs-backend:
+    build: ./backend
+    container_name: delivery-nestjs
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - APP_PORT=3001
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=delivery_user
+      - DB_PASSWORD=delivery_pass
+      - DB_NAME=xianglixtangqin
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - mysql
+      - redis
+    restart: always
+
+volumes:
+  mysql_data:
+  redis_data:

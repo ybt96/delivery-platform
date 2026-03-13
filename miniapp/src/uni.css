@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/**
+ * uni.scss - 全局样式变量与混合器
+ * 此文件由 uni-app 自动注入到所有 Vue SFC 的 <style> 块中
+ * 注意：不能使用 @import 相对路径，因为注入时路径基准是各 Vue 文件所在目录
+ * 因此将 variables.scss 和 mixins.scss 的内容直接内联在此处
+ */
+@-webkit-keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* uni-app 默认主题色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */

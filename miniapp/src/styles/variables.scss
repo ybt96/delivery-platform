@@ -1,0 +1,110 @@
+// ==================== 颜色变量 ====================
+
+// 主色调 - 绿色系（乡村、自然、信任）
+$primary-color: #4CAF50;
+$primary-light: #81C784;
+$primary-dark: #388E3C;
+
+// 辅助色 - 橙色系（活力、温暖）
+$secondary-color: #FF9800;
+$secondary-light: #FFB74D;
+$secondary-dark: #F57C00;
+
+// 功能色
+$success-color: #19be6b;
+$warning-color: #ff9900;
+$error-color: #ff4d4f;
+$info-color: #2979ff;
+
+// 中性色
+$text-primary: #333333;
+$text-regular: #666666;
+$text-secondary: #999999;
+$text-placeholder: #cccccc;
+
+// 背景色
+$bg-color: #f5f5f5;
+$bg-white: #ffffff;
+$bg-gray: #f8f8f8;
+
+// 边框色
+$border-color: #e8e8e8;
+$border-light: #f0f0f0;
+
+// 价格色
+$price-color: #ff4d4f;
+
+// ==================== 字体大小 ====================
+$font-size-xs: 20rpx;
+$font-size-sm: 24rpx;
+$font-size-base: 28rpx;
+$font-size-md: 30rpx;
+$font-size-lg: 32rpx;
+$font-size-xl: 36rpx;
+$font-size-xxl: 40rpx;
+$font-size-title: 44rpx;
+
+// ==================== 间距 ====================
+$spacing-xs: 8rpx;
+$spacing-sm: 16rpx;
+$spacing-base: 24rpx;
+$spacing-md: 32rpx;
+$spacing-lg: 40rpx;
+$spacing-xl: 48rpx;
+
+// ==================== 圆角 ====================
+$radius-sm: 8rpx;
+$radius-base: 12rpx;
+$radius-md: 16rpx;
+$radius-lg: 24rpx;
+$radius-round: 999rpx;
+
+// ==================== 阴影 ====================
+$shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+$shadow-base: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+
+// ==================== 导航栏 ====================
+$nav-height: 88rpx;
+$tab-bar-height: 100rpx;
+
+// ==================== 扩展 UI Token ====================
+
+// 卡片 elevation 等级
+$elevation-card: 0 2rpx 12rpx rgba(0, 0, 0, 0.07);
+$elevation-bar: 0 -2rpx 12rpx rgba(0, 0, 0, 0.07);
+$elevation-modal: 0 8rpx 40rpx rgba(0, 0, 0, 0.14);
+
+// 状态色（用于 tag / badge）
+$tag-primary-bg: rgba(76, 175, 80, 0.10);
+$tag-primary-color: #388E3C;
+$tag-danger-bg: rgba(255, 77, 79, 0.10);
+$tag-danger-color: #D32F2F;
+$tag-warning-bg: rgba(255, 152, 0, 0.12);
+$tag-warning-color: #E65100;
+
+// 分组标题色
+$section-title-color: #999999;
+$section-title-size: 22rpx;
+
+// Tab 激活下划线宽度
+$tab-underline-h: 4rpx;
+$tab-underline-color: $primary-color;
+
+// 输入框高度
+$input-height: 80rpx;
+$search-height: 72rpx;
+
+// 底部操作栏高度
+$bottom-bar-height: 108rpx;
+
+// 触控最小区域
+$touch-min: 88rpx;
+
+// 骨架屏颜色
+$skeleton-bg: #f0f0f0;
+$skeleton-shine: #e8e8e8;
+
+// 分割线
+$divider-color: #f0f0f0;
+$divider-thick: 12rpx;  // 分组间厚分割

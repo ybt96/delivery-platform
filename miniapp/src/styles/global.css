@@ -1,0 +1,260 @@
+page {
+  background-color: #f5f5f5;
+  font-size: 28rpx;
+  color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+view, text, scroll-view, swiper, swiper-item, image, navigator, video, input, textarea, button {
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+button::after {
+  border: none;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.text-primary {
+  color: #333333;
+}
+
+.text-regular {
+  color: #666666;
+}
+
+.text-secondary {
+  color: #999999;
+}
+
+.color-primary {
+  color: #4CAF50;
+}
+
+.color-error {
+  color: #ff4d4f;
+}
+
+.color-success {
+  color: #19be6b;
+}
+
+.color-warning {
+  color: #ff9900;
+}
+
+.color-price {
+  color: #ff4d4f;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-gray {
+  background-color: #f8f8f8;
+}
+
+.bg-primary {
+  background-color: #4CAF50;
+}
+
+.fs-xs {
+  font-size: 20rpx;
+}
+
+.fs-sm {
+  font-size: 24rpx;
+}
+
+.fs-base {
+  font-size: 28rpx;
+}
+
+.fs-md {
+  font-size: 30rpx;
+}
+
+.fs-lg {
+  font-size: 32rpx;
+}
+
+.fs-xl {
+  font-size: 36rpx;
+}
+
+.fs-xxl {
+  font-size: 40rpx;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.mt-sm {
+  margin-top: 16rpx;
+}
+
+.mt-base {
+  margin-top: 24rpx;
+}
+
+.mb-sm {
+  margin-bottom: 16rpx;
+}
+
+.mb-base {
+  margin-bottom: 24rpx;
+}
+
+.ml-sm {
+  margin-left: 16rpx;
+}
+
+.ml-base {
+  margin-left: 24rpx;
+}
+
+.mr-sm {
+  margin-right: 16rpx;
+}
+
+.mr-base {
+  margin-right: 24rpx;
+}
+
+.p-sm {
+  padding: 16rpx;
+}
+
+.p-base {
+  padding: 24rpx;
+}
+
+.px-base {
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+}
+
+.py-base {
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-delete {
+  text-decoration: line-through;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.radius-sm {
+  border-radius: 8rpx;
+}
+
+.radius-base {
+  border-radius: 12rpx;
+}
+
+.radius-md {
+  border-radius: 16rpx;
+}
+
+.radius-round {
+  border-radius: 999rpx;
+}
+
+.shadow {
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+
+.safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}

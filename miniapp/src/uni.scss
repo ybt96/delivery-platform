@@ -1,0 +1,349 @@
+/**
+ * uni.scss - 全局样式变量与混合器
+ * 此文件由 uni-app 自动注入到所有 Vue SFC 的 <style> 块中
+ * 注意：不能使用 @import 相对路径，因为注入时路径基准是各 Vue 文件所在目录
+ * 因此将 variables.scss 和 mixins.scss 的内容直接内联在此处
+ */
+
+// ==================== 颜色变量 ====================
+
+// 主色调 - 绿色系（乡村、自然、信任）
+$primary-color: #4CAF50;
+$primary-light: #81C784;
+$primary-dark: #388E3C;
+
+// 辅助色 - 橙色系（活力、温暖）
+$secondary-color: #FF9800;
+$secondary-light: #FFB74D;
+$secondary-dark: #F57C00;
+
+// 功能色
+$success-color: #19be6b;
+$warning-color: #ff9900;
+$error-color: #ff4d4f;
+$info-color: #2979ff;
+
+// 中性色
+$text-primary: #333333;
+$text-regular: #666666;
+$text-secondary: #999999;
+$text-placeholder: #cccccc;
+
+// 背景色
+$bg-color: #f5f5f5;
+$bg-white: #ffffff;
+$bg-gray: #f8f8f8;
+
+// 边框色
+$border-color: #e8e8e8;
+$border-light: #f0f0f0;
+
+// 价格色
+$price-color: #ff4d4f;
+
+// ==================== 字体大小 ====================
+$font-size-xs: 20rpx;
+$font-size-sm: 24rpx;
+$font-size-base: 28rpx;
+$font-size-md: 30rpx;
+$font-size-lg: 32rpx;
+$font-size-xl: 36rpx;
+$font-size-xxl: 40rpx;
+$font-size-title: 44rpx;
+
+// ==================== 间距 ====================
+$spacing-xs: 8rpx;
+$spacing-sm: 16rpx;
+$spacing-base: 24rpx;
+$spacing-md: 32rpx;
+$spacing-lg: 40rpx;
+$spacing-xl: 48rpx;
+
+// ==================== 圆角 ====================
+$radius-sm: 8rpx;
+$radius-base: 12rpx;
+$radius-md: 16rpx;
+$radius-lg: 24rpx;
+$radius-round: 999rpx;
+
+// ==================== 阴影 ====================
+$shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+$shadow-base: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+
+// ==================== 导航栏 ====================
+$nav-height: 88rpx;
+$tab-bar-height: 100rpx;
+
+// ==================== 混合器 ====================
+
+// 文本省略
+@mixin ellipsis($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $lines == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+}
+
+// flex 居中
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// flex 两端对齐
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// flex 纵向布局
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// 1px 边框
+@mixin border-bottom {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1rpx;
+    background-color: $border-color;
+    transform: scaleY(0.5);
+  }
+}
+
+// 安全区域底部
+@mixin safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// 卡片样式
+@mixin card {
+  background-color: $bg-white;
+  border-radius: $radius-base;
+  padding: $spacing-base;
+  margin: $spacing-sm $spacing-base;
+  box-shadow: $shadow-sm;
+}
+
+// 价格样式
+@mixin price($size: $font-size-lg) {
+  color: $price-color;
+  font-size: $size;
+  font-weight: bold;
+  &::before {
+    content: '¥';
+    font-size: $size * 0.75;
+    margin-right: 2rpx;
+  }
+}
+
+// 标签样式
+@mixin tag($bg: $primary-color, $color: #fff) {
+  display: inline-block;
+  padding: 4rpx 12rpx;
+  font-size: $font-size-xs;
+  color: $color;
+  background-color: $bg;
+  border-radius: $radius-sm;
+  line-height: 1.5;
+}
+
+// 按钮样式
+@mixin btn-primary {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: $radius-round;
+  font-size: $font-size-base;
+  padding: 20rpx 40rpx;
+  text-align: center;
+  &:active {
+    background-color: $primary-dark;
+  }
+}
+
+// ==================== 扩展 UI Token ====================
+
+// 卡片 elevation 等级
+$elevation-card: 0 2rpx 12rpx rgba(0, 0, 0, 0.07);
+$elevation-bar: 0 -2rpx 12rpx rgba(0, 0, 0, 0.07);
+$elevation-modal: 0 8rpx 40rpx rgba(0, 0, 0, 0.14);
+
+// 状态色（tag / badge）
+$tag-primary-bg: rgba(76, 175, 80, 0.10);
+$tag-primary-color: #388E3C;
+$tag-danger-bg: rgba(255, 77, 79, 0.10);
+$tag-danger-color: #D32F2F;
+$tag-warning-bg: rgba(255, 152, 0, 0.12);
+$tag-warning-color: #E65100;
+
+// 分组标题色
+$section-title-color: #999999;
+$section-title-size: 22rpx;
+
+// Tab 激活下划线
+$tab-underline-h: 4rpx;
+$tab-underline-color: $primary-color;
+
+// 高度
+$input-height: 80rpx;
+$search-height: 72rpx;
+$bottom-bar-height: 108rpx;
+$touch-min: 88rpx;
+
+// 骨架屏颜色
+$skeleton-bg: #f0f0f0;
+$skeleton-shine: #e8e8e8;
+
+// 分割线
+$divider-color: #f0f0f0;
+$divider-thick: 12rpx;
+
+// ==================== 扩展混合器 ====================
+
+// 分组区块标题
+@mixin section-label {
+  font-size: $section-title-size;
+  color: $section-title-color;
+  padding: 20rpx $spacing-base 12rpx;
+  background-color: $bg-color;
+  display: block;
+  letter-spacing: 1rpx;
+}
+
+// 标准列表 item
+@mixin list-item {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md $spacing-base;
+  background-color: #fff;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: $spacing-base;
+    bottom: 0;
+    right: 0;
+    height: 1rpx;
+    background-color: $divider-color;
+    transform: scaleY(0.5);
+  }
+  &:last-child::after {
+    display: none;
+  }
+  &:active {
+    background-color: $bg-gray;
+  }
+}
+
+// 骨架屏动画块
+@mixin skeleton-block {
+  background: linear-gradient(90deg, $skeleton-bg 25%, $skeleton-shine 50%, $skeleton-bg 75%);
+  background-size: 400% 100%;
+  -webkit-animation: skeleton-shimmer 1.4s ease infinite;
+          animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: $radius-sm;
+}
+
+@-webkit-keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// 徽标（角标）
+@mixin badge {
+  position: absolute;
+  top: -8rpx;
+  right: -12rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding: 0 8rpx;
+  border-radius: 16rpx;
+  background-color: $error-color;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+}
+
+// ==================== uni-app 默认主题变量（引用上方自定义变量）====================
+
+/* uni-app 默认主题色 */
+$uni-color-primary: $primary-color;
+$uni-color-success: $success-color;
+$uni-color-warning: $warning-color;
+$uni-color-error: $error-color;
+
+/* 文字基本颜色 */
+$uni-text-color: $text-primary;
+$uni-text-color-inverse: #fff;
+$uni-text-color-grey: $text-secondary;
+$uni-text-color-placeholder: $text-placeholder;
+$uni-text-color-disable: #c0c0c0;
+
+/* 背景颜色 */
+$uni-bg-color: #ffffff;
+$uni-bg-color-grey: #f8f8f8;
+$uni-bg-color-hover: #f1f1f1;
+$uni-bg-color-mask: rgba(0, 0, 0, 0.4);
+
+/* 边框颜色 */
+$uni-border-color: $border-color;
+
+/* 文字尺寸 */
+$uni-font-size-sm: $font-size-sm;
+$uni-font-size-base: $font-size-base;
+$uni-font-size-lg: $font-size-lg;
+
+/* 图片尺寸 */
+$uni-img-size-sm: 40rpx;
+$uni-img-size-base: 52rpx;
+$uni-img-size-lg: 80rpx;
+
+/* Border Radius */
+$uni-border-radius-sm: $radius-sm;
+$uni-border-radius-base: $radius-base;
+$uni-border-radius-lg: $radius-lg;
+$uni-border-radius-circle: 50%;
+
+/* 水平间距 */
+$uni-spacing-row-sm: $spacing-sm;
+$uni-spacing-row-base: $spacing-base;
+$uni-spacing-row-lg: $spacing-lg;
+
+/* 垂直间距 */
+$uni-spacing-col-sm: $spacing-sm;
+$uni-spacing-col-base: $spacing-base;
+$uni-spacing-col-lg: $spacing-lg;
+
+/* 透明度 */
+$uni-opacity-disabled: 0.3;
+
+/* 文章场景相关 */
+$uni-color-title: #2C405A;
+$uni-font-size-title: 40rpx;
+$uni-color-subtitle: #555555;
+$uni-font-size-subtitle: 36rpx;
+$uni-color-paragraph: #3F536E;
+$uni-font-size-paragraph: 30rpx;
